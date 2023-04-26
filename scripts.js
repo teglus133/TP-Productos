@@ -8,3 +8,11 @@ textoProducto.onkeyup = () => {
         boton.classList.add("disabled")
     }
 }
+
+document.getElementById("boton").onclick = () => {
+    axios.get(`https://dummyjson.com/products/search?q=${textoProducto.value}`)
+    .then(function (response) {
+        console.log(response.data);
+    })
+}
+
